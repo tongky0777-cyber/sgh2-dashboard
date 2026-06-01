@@ -543,7 +543,7 @@ textarea{resize:vertical;min-height:80px;}
       <input type="hidden" id="s-class" value="">
       <div class="form-row">
         <div class="form-group"><label>이름 *</label><input id="s-name" placeholder="홍길동"></div>
-        <div class="form-group"><label>학년</label><select id="s-grade"><option>초5</option><option>초6</option><option>중1</option><option>중2</option><option>중3</option><option>고1</option><option>고2</option><option>고3</option></select></div>
+        <div class="form-group"><label>학년</label><select id="s-grade"><option>초3</option><option>초4</option><option>초5</option><option>초6</option><option>중1</option><option>중2</option><option>중3</option><option>고1</option><option>고2</option><option>고3</option></select></div>
       </div>
       <div class="form-row">
         <div class="form-group"><label>학교</label><input id="s-school" placeholder="경북고등학교"></div>
@@ -736,7 +736,7 @@ textarea{resize:vertical;min-height:80px;}
       <input type="hidden" id="g-id">
       <div class="form-row">
         <div class="form-group"><label>반 이름 *</label><input id="g-name" placeholder="예: 공통수학1 화금반"></div>
-        <div class="form-group"><label>과목</label><select id="g-subject"><option value="">선택없음</option><option value="">선택없음</option><option>중1-1</option><option>중1-2</option><option>중2-1</option><option>중2-2</option><option>중3-1</option><option>중3-2</option><option>공통수학1</option><option>공통수학2</option><option>대수</option><option>미적분Ⅰ</option><option>확률통계</option><option>미적분Ⅱ</option><option>기하</option></select></div>
+        <div class="form-group"><label>과목</label><select id="g-subject"><option value="">선택없음</option><option>초3-1</option><option>초3-2</option><option>초4-1</option><option>초4-2</option><option>중1-1</option><option>중1-2</option><option>중2-1</option><option>중2-2</option><option>중3-1</option><option>중3-2</option><option>공통수학1</option><option>공통수학2</option><option>대수</option><option>미적분Ⅰ</option><option>확률통계</option><option>미적분Ⅱ</option><option>기하</option></select></div>
       </div>
       <div class="form-row">
         <div class="form-group"><label>수업 유형</label><select id="g-type"><option value="">선택없음</option><option>개념</option><option>문풀</option><option>심화</option></select></div>
@@ -1239,7 +1239,7 @@ function toast(msg) {
 // 학생 선택 셀렉트 채우기
 function populateSel() {
   var students = DB.get('students');
-  var gradeOrder = ['초5','초6','중1','중2','중3','고1','고2','고3'];
+  var gradeOrder = ['초3','초4','초5','초6','중1','중2','중3','고1','고2','고3'];
   var sorted = students.slice().sort(function(a,b){
     var ai = gradeOrder.indexOf(a.grade||''); if(ai===-1) ai=999;
     var bi = gradeOrder.indexOf(b.grade||''); if(bi===-1) bi=999;
@@ -1381,7 +1381,7 @@ var showWithdrawn = document.getElementById('show-withdrawn') && document.getEle
   }
 
   // 학년 순서 정의
-  var gradeOrder = ['초5','초6','중1','중2','중3','고1','고2','고3'];
+  var gradeOrder = ['초3','초4','초5','초6','중1','중2','중3','고1','고2','고3'];
 
   // 학년별 그룹핑
   var gradeMap = {};
@@ -2960,7 +2960,7 @@ function renderAttDayList(students, dateStr) {
   };
 
   // 학년 순서
-  var gradeOrder = ['초5','초6','중1','중2','중3','고1','고2','고3'];
+  var gradeOrder = ['초3','초4','초5','초6','중1','중2','중3','고1','고2','고3'];
   var sorted = students.slice().sort(function(a,b){
     return gradeOrder.indexOf(a.grade||'') - gradeOrder.indexOf(b.grade||'');
   });
